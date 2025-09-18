@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Code
@@ -25,18 +25,6 @@ jobs:
           IMAGE_NAME=harsh042/wisecow
           docker build -t $IMAGE_NAME:latest .
           docker push $IMAGE_NAME:latest
-
-      # Setup kubectl
-      - name: Setup kubectl
-        uses: azure/setup-kubectl@v3
-        with:
-          version: v1.30.0   # Adjust to your cluster version
-
-      # Configure K8s (using kubeconfig secret)
-      - name: Set up Kubeconfig
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG_CONTENT }}" > $HOME/.kube/config
 
       # Deploy to Kubernetes
       - name: Deploy to Minikube / Cluster
