@@ -25,9 +25,3 @@ jobs:
           IMAGE_NAME=harsh042/wisecow
           docker build -t $IMAGE_NAME:latest .
           docker push $IMAGE_NAME:latest
-
-      # Verify rollout
-      - name: Verify Deployment
-        run: |
-          kubectl rollout status deployment/wisecow-deployment
-          kubectl get svc wisecow-service -o wide
