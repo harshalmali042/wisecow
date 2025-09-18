@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: Ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout Code
