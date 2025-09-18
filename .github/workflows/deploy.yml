@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubantu:latest
+    runs-on: Ubuntu-latest
 
     steps:
       - name: Checkout Code
