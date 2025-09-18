@@ -30,4 +30,4 @@ jobs:
         run: |
           kubectl apply -f k8s/
           kubectl rollout status deployment/wisecow-deployment
-          kubectl get service wisecow-service -o wide
+          kubectl get service wisecow -o wide
