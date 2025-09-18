@@ -25,3 +25,9 @@ jobs:
           IMAGE_NAME=harsh042/wisecow
           docker build -t $IMAGE_NAME:latest .
           docker push $IMAGE_NAME:latest
+
+      - name: Deploy to Minikube
+        run: |
+          kubectl apply -f k8s/
+          kubectl rollout status deployment/wisecow-deployment
+          kubectl get service wisecow-service -o wide
