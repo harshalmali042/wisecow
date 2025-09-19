@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SOURCE_DIR="/home/Ubuntu/data"
-USER="Ubuntu"
+SOURCE_DIR="/home/ubuntu/data"
+USER="ubuntu"
 HOST_IP="192.168.1.100"
 BACKUP_DIR="/backups/data"
 LOG_FILE="/var/log/backup.log"
